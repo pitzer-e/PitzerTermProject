@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">PitzerTermProject</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Mobile Ticket Creator</string>
+    <string name="nav_header_subtitle">Pitzer EOU Term Project</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_about">About</string>
+
+    <string name="menu_new">Create New</string>
+    <string name="menu_edit">Edit Existing</string>
+    <string name="menu_view">View</string>
+    <string name="action_help">Help</string>
+    <string name="title_activity_help">Help using App</string>
+    <string name="large_text">
+        "Help using the ticket creator app.\n\n"
+
+        "Welcome to the help section of my app! In this section I will hopefully be able to outline"
+        "some information that you might find helpful. The application should open up to a splash"
+        "screen when you first launch it, which will display for 10 seconds. The next screen you"
+        "will see is the main screen, which has the following items for you to utilize in the"
+        "navigation bar in the upper left hand corner.\n\n"
+
+        "Create New.\n\n"
+
+        "The create new section will allow you to create a brand new help ticket. On this page, "
+        "you will be welcomed by a number of entry field boxes which will allow you to fill out"
+        "the information that you would like to add to your ticket. After filling out all of the"
+        "fields that you wish add information to, you can then add the ticket to the database."
+        "You can then view this ticket alongside others that might be present as well, or you"
+        "can also choose to edit the ticket. Both of these options are discussed below.\n\n"
+
+        "Edit Existing.\n\n"
+
+        "The edit existing section will allow you to edit a ticket that currently exists in the"
+        "database. On the screen, you will be prompted with a field entry box for you to enter"
+        "the ticket number which you would like to edit (if you aren't sure which ticket it is you"
+        "wish to edit, please make use of my handy-dandy view ticket section, discussed next)!"
+        "Once you enter the required ticket number entry field, you will be greeted with the option"
+        "to edit any field of the ticket, other than the ticket number.\n\n"
+
+        "View Tickets.\n\n"
+
+        "The view current tickets section is a page which will allow you to view all current"
+        "tickets that exist within the system. The system automatically increments the ticket"
+        "number, which is the first piece of information listed on the left-hand side of the page."
+        "While this panel does not allow you to make any edits or changes to the tickets that"
+        "are present, it allows you to get a high level perspective of the tickets which are"
+        "available to edit.\n\n"
+
+    </string>
+    <string name="action_settings">Settings</string>
+</resources>
