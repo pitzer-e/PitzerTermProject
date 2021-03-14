@@ -1,10 +1,7 @@
 <resources>
     <string name="app_name">PitzerTermProject</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Mobile Ticket Creator</string>
     <string name="nav_header_subtitle">Pitzer EOU Term Project</string>
-    <string name="nav_header_desc">Navigation header</string>
     <string name="action_about">About</string>
 
     <string name="menu_new">Create New</string>
@@ -13,7 +10,7 @@
     <string name="action_help">Help</string>
     <string name="title_activity_help">Help using App</string>
     <string name="large_text">
-        "Help using the ticket creator app.\n\n"
+        "Help using the ticket creator app:\n\n"
 
         "Welcome to the help section of my app! In this section I will hopefully be able to outline"
         "some information that you might find helpful. The application should open up to a splash"
@@ -21,7 +18,7 @@
         "will see is the main screen, which has the following items for you to utilize in the"
         "navigation bar in the upper left hand corner.\n\n"
 
-        "Create New.\n\n"
+        "Create New:\n\n"
 
         "The create new section will allow you to create a brand new help ticket. On this page, "
         "you will be welcomed by a number of entry field boxes which will allow you to fill out"
@@ -30,7 +27,7 @@
         "You can then view this ticket alongside others that might be present as well, or you"
         "can also choose to edit the ticket. Both of these options are discussed below.\n\n"
 
-        "Edit Existing.\n\n"
+        "Edit Existing:\n\n"
 
         "The edit existing section will allow you to edit a ticket that currently exists in the"
         "database. On the screen, you will be prompted with a field entry box for you to enter"
@@ -39,7 +36,7 @@
         "Once you enter the required ticket number entry field, you will be greeted with the option"
         "to edit any field of the ticket, other than the ticket number.\n\n"
 
-        "View Tickets.\n\n"
+        "View Tickets:\n\n"
 
         "The view current tickets section is a page which will allow you to view all current"
         "tickets that exist within the system. The system automatically increments the ticket"
@@ -48,6 +45,29 @@
         "are present, it allows you to get a high level perspective of the tickets which are"
         "available to edit.\n\n"
 
+        "Guide:\n\n"
+
+        "Guide that I used to help build this application:\n"
+        "https://www.youtube.com/watch?v=312RhjfetP8&amp;t=1519s\n\n"
+
+        "SQLite Database Browser:\n"
+        "https://sqlitebrowser.org/\n\n"
+
+        "How to browse my data in SQLite Browser\n\n"
+        "View -> Tool Windows -> Device File Explorer -> Data-> Data->"
+        "com.example.pitzertermproject -> tickets.db\n\n"
+
+        "You can then right click and "Save As" to a local location on your computer"
+        "(I just saved it to Desktop when I tested on my end) and then you can open the .db file"
+        "using SQLite Browser!\n\n"
+
     </string>
+    <string name="UserName">Your Name</string>
+    <string name="HelpTopic">Help Topic</string>
+    <string name="BriefDescription">Brief Description</string>
     <string name="action_settings">Settings</string>
+    <string name="new_ticket_name">New Ticket Name</string>
+    <string name="new_help_topic">New Help Topic</string>
+    <string name="edit_ID">Enter Ticket ID</string>
+    <string name="new_description">New Description</string>
 </resources>

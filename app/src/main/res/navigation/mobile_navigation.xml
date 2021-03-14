@@ -2,30 +2,27 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_home">
 
+    <!-- This is my Create New Fragment -->
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.pitzertermproject.ui.home.HomeFragment"
+        android:name="com.example.pitzertermproject.CreateFragment"
         android:label="@string/menu_new"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_create" />
 
+    <!-- This is my Edit Existing Fragment -->
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.pitzertermproject.ui.gallery.GalleryFragment"
+        android:name="com.example.pitzertermproject.EditFragment"
         android:label="@string/menu_edit"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_edit" />
 
+    <!-- This is my View Existing Fragment -->
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.pitzertermproject.ui.slideshow.SlideshowFragment"
+        android:name="com.example.pitzertermproject.ViewFragment"
         android:label="@string/menu_view"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_view" />
 
-    <fragment
-        android:id="@+id/nav_help"
-        android:name="com.example.pitzertermproject.ui.help.HelpFragment"
-        android:label="@string/action_help"
-        tools:layout="@layout/help_fragment" />
 </navigation>

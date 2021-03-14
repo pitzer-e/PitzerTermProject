@@ -1,13 +1,19 @@
+/*
+    MainActivity.kt
+    Ethan Pitzer
+    2021-13-3
+
+    MainActivity is where fragments and MyUtils are setup and started. The body of this code
+    doesn't do any of the work that is found withing the fragments, but rather simply acts
+    as a location where the application is started from
+ */
 package com.example.pitzertermproject
 
 import android.content.Intent
-import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -20,7 +26,6 @@ import androidx.appcompat.widget.Toolbar
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var music: MediaPlayer
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,11 +38,10 @@ class MainActivity : AppCompatActivity() {
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
 
-        //  create music and set it looping!
-        music = MediaPlayer.create(applicationContext, R.raw.backgroundmusic)
-        music.start()
-        music.setVolume((100/100).toFloat(), (100/100).toFloat())
-        music.isLooping = true
+        MyUtils.setup(this)
+
+        //  start music from MyUtils
+        MyUtils.startMe(this)
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -45,19 +49,13 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home,
                 R.id.nav_gallery,
                 R.id.nav_slideshow,
-                R.id.nav_help),
+                ),
                 drawerLayout
         )
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-    }
-
-    //  helper function for changing volume from fragments
-    internal fun changeVol(v: Int) {
-        Log.i("Main", "changing volume")
-        music.setVolume(v.toFloat()*10, v.toFloat()*10)
     }
 
     //  helper function that inflates the menu
@@ -78,6 +76,9 @@ class MainActivity : AppCompatActivity() {
         Log.i("Main", "options selected")
         when (item.itemId) {
             R.id.action_about -> {
+                val myIntent = Intent(this, AboutActivity::class.java)
+                startActivity(myIntent)
+
                 Log.i("Main","about selected")
             }
             R.id.action_help -> {
@@ -86,7 +87,18 @@ class MainActivity : AppCompatActivity() {
 
                 Log.i("Main", "help selected")
             }
+            R.id.action_settings -> {
+                val myIntent = Intent(this, SettingsActivity::class.java)
+                startActivity(myIntent)
+
+                Log.i("Main", "settings selected")
+            }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    //  internal function to save values from fragment
+    internal fun saveFragmentValues(name: String, email: String, topic: String, description: String) {
+
     }
 }
