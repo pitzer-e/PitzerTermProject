@@ -21,14 +21,14 @@ import androidx.fragment.app.Fragment
 
 class CreateFragment : Fragment() {
 
-    lateinit var btn_submit: Button
-    lateinit var et_name: EditText
-    lateinit var et_topic: EditText
-    lateinit var et_description: EditText
+    private lateinit var btnSubmit: Button
+    private lateinit var etName: EditText
+    private lateinit var etTopic: EditText
+    private lateinit var etDescription: EditText
 
     //  this is my context here...literally all good variable names are keywords
     //  why tho?? ._.
-    lateinit var myThing: Context
+    private lateinit var myThing: Context
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -36,12 +36,12 @@ class CreateFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_create, container, false)
 
-        btn_submit = view.findViewById(R.id.btn_submit)
-        et_name = view.findViewById<EditText>(R.id.et_name)
-        et_topic = view.findViewById<EditText>(R.id.et_topic)
-        et_description = view.findViewById<EditText>(R.id.et_description)
+        btnSubmit = view.findViewById(R.id.btn_submit)
+        etName = view.findViewById<EditText>(R.id.et_name)
+        etTopic = view.findViewById<EditText>(R.id.et_topic)
+        etDescription = view.findViewById<EditText>(R.id.et_description)
 
-        btn_submit.setOnClickListener() {
+        btnSubmit.setOnClickListener() {
             Log.i("Create ticket fragment","submit button pressed")
 
             //  so long as this thing isn't null, you can have toast
@@ -52,17 +52,17 @@ class CreateFragment : Fragment() {
             var ticketModel: TicketModel
 
             //  are the name and topic field missing?
-            if (et_name.text.toString() == "" && et_topic.text.toString() == "") {
+            if (etName.text.toString() == "" && etTopic.text.toString() == "") {
                 Toast.makeText(myThing, "Name and topic required", Toast.LENGTH_LONG).show()
             }
 
             //  is the name field missing?
-            else if (et_name.text.toString() == "" && et_topic.text.toString() != "") {
+            else if (etName.text.toString() == "" && etTopic.text.toString() != "") {
                 Toast.makeText(myThing, "Name required", Toast.LENGTH_LONG).show()
             }
 
             //  is the topic field missing?
-            else if (et_name.text.toString() != "" && et_topic.text.toString() == "") {
+            else if (etName.text.toString() != "" && etTopic.text.toString() == "") {
                 Toast.makeText(myThing, "Topic required", Toast.LENGTH_LONG).show()
             }
 
@@ -71,7 +71,7 @@ class CreateFragment : Fragment() {
 
                 try{
 
-                    ticketModel = TicketModel(et_name.text.toString(), et_topic.text.toString(), et_description.text.toString(), -1)
+                    ticketModel = TicketModel(etName.text.toString(), etTopic.text.toString(), etDescription.text.toString(), -1)
                     Toast.makeText(myThing, "Ticket submitted successfully!", Toast.LENGTH_SHORT).show()
 
                 } catch(error: Exception ) {

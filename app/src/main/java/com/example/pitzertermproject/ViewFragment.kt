@@ -22,11 +22,11 @@ import androidx.fragment.app.Fragment
 
 class ViewFragment : Fragment() {
 
-    lateinit var btn_view: Button
-    lateinit var myThing: Context
-    lateinit var lv_ticketList: ListView
-    lateinit var ticketArrayAdapter: ArrayAdapter<TicketModel>
-    lateinit var myHelper: DataBaseHelper
+    private lateinit var btnView: Button
+    private lateinit var myThing: Context
+    private lateinit var lvTicketList: ListView
+    private lateinit var ticketArrayAdapter: ArrayAdapter<TicketModel>
+    private lateinit var myHelper: DataBaseHelper
 
     //  onCreate view
     override fun onCreateView(
@@ -35,9 +35,9 @@ class ViewFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_view, container, false)
 
-        btn_view = view.findViewById(R.id.btn_view)
-        lv_ticketList = view.findViewById(R.id.lv_ticketList)
-        btn_view.setOnClickListener(){
+        btnView = view.findViewById(R.id.btn_view)
+        lvTicketList = view.findViewById(R.id.lv_ticketList)
+        btnView.setOnClickListener(){
             Log.i("View ticket fragment","refresh button pressed")
 
             if (container != null) {
@@ -46,7 +46,7 @@ class ViewFragment : Fragment() {
 
             myHelper = DataBaseHelper(myThing)
             ticketArrayAdapter = ArrayAdapter<TicketModel>(myThing, android.R.layout.simple_list_item_1, myHelper.getAll())
-            lv_ticketList.adapter = ticketArrayAdapter
+            lvTicketList.adapter = ticketArrayAdapter
 
         }
         return view;

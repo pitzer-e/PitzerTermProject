@@ -52,7 +52,7 @@ object MyUtils {
 
     //  change volume using slider in settings activity
     fun onProgressChanged(progress: Int, fromUser: Boolean) {
-        Log.i("MyUtils", "music adjusted to: " + progress)
+        Log.i("MyUtils", "music adjusted to: $progress")
 
         mp.setVolume(progress.toFloat()/100, progress.toFloat()/100)
     }

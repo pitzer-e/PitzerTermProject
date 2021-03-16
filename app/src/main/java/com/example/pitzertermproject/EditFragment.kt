@@ -25,12 +25,12 @@ import java.lang.Exception
 
 class EditFragment : Fragment() {
 
-    lateinit var btn_edit: Button
-    lateinit var et_ID: EditText
-    lateinit var et_newName: EditText
-    lateinit var et_newTopic: EditText
-    lateinit var et_newDesc: EditText
-    lateinit var myThing: Context
+    private lateinit var btnEdit: Button
+    private lateinit var etID: EditText
+    private lateinit var etNewName: EditText
+    private lateinit var etNewTopic: EditText
+    private lateinit var etNewDesc: EditText
+    private lateinit var myThing: Context
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -38,13 +38,13 @@ class EditFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_edit, container, false)
 
-        btn_edit = view.findViewById(R.id.btn_edit)
-        et_ID = view.findViewById(R.id.et_ticketID)
-        et_newName = view.findViewById(R.id.et_newName)
-        et_newTopic = view.findViewById(R.id.et_newTopic)
-        et_newDesc = view.findViewById(R.id.et_newDescription)
+        btnEdit = view.findViewById(R.id.btn_edit)
+        etID = view.findViewById(R.id.et_ticketID)
+        etNewName = view.findViewById(R.id.et_newName)
+        etNewTopic = view.findViewById(R.id.et_newTopic)
+        etNewDesc = view.findViewById(R.id.et_newDescription)
 
-        btn_edit.setOnClickListener() {
+        btnEdit.setOnClickListener() {
             Log.i("Edit ticket fragment","update button pressed")
 
             //  so long as this thing isn't null, you can have toast
@@ -55,17 +55,17 @@ class EditFragment : Fragment() {
             var ticketModel: TicketModel
 
             //  are the name and topic field missing?
-            if (et_newName.text.toString() == "" && et_newTopic.text.toString() == "") {
+            if (etNewName.text.toString() == "" && etNewTopic.text.toString() == "") {
                 Toast.makeText(myThing, "Name and topic required", Toast.LENGTH_LONG).show()
             }
 
             //  is the name field missing?
-            else if (et_newName.text.toString() == "" && et_newTopic.text.toString() != "") {
+            else if (etNewName.text.toString() == "" && etNewTopic.text.toString() != "") {
                 Toast.makeText(myThing, "Name required", Toast.LENGTH_LONG).show()
             }
 
             //  is the topic field missing?
-            else if (et_newName.text.toString() != "" && et_newTopic.text.toString() == "") {
+            else if (etNewName.text.toString() != "" && etNewTopic.text.toString() == "") {
                 Toast.makeText(myThing, "Topic required", Toast.LENGTH_LONG).show()
             }
 
@@ -75,7 +75,7 @@ class EditFragment : Fragment() {
 
                 try{
 
-                    ticketModel = TicketModel(et_newName.text.toString(), et_newTopic.text.toString(), et_newDesc.text.toString(), et_ID.text.toString().toInt())
+                    ticketModel = TicketModel(etNewName.text.toString(), etNewTopic.text.toString(), etNewDesc.text.toString(), etID.text.toString().toInt())
                     val check = myHelper.editOne(ticketModel)
 
                     if (check) {

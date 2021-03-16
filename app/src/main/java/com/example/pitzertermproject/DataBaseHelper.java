@@ -96,11 +96,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
 
-        else {
-            //  failure. do not add anything to the list
-
-        }
-
         cursor.close();
         db.close();
 
